@@ -17,7 +17,7 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/mondrianwifi/include
 
-TARGET_OTA_ASSERT_DEVICE := mondrianwifi,mondrianwifiue,mondrianwifixx
+TARGET_OTA_ASSERT_DEVICE := matissewifi,mondrianwifi,mondrianwifiue,mondrianwifixx
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -28,9 +28,11 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
-TARGET_KERNEL_CONFIG := slim_mondrian_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/mondrianwifi
+#BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+#TARGET_KERNEL_CONFIG := slim_matisse_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_matissewifi_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-14.06/bin/arm-linux-gnueabihf-
 
 # External apps on SD
